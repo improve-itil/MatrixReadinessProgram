@@ -5,66 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>סדנת מעבר למבנה מטריציוני</title>
   <style>
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
+      background: linear-gradient(to bottom, #e3f2fd, #ffffff);
       color: #333;
       direction: rtl;
     }
     .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s ease-out;
     }
     .logo {
       text-align: center;
       margin-bottom: 30px;
     }
     .logo img {
-      max-width: 200px;
+      max-width: 160px;
+      transition: transform 0.3s ease;
+      animation: fadeInUp 1.2s ease-out;
+    }
+    .logo img:hover {
+      transform: scale(1.05);
     }
     h1 {
       text-align: center;
       color: #0d47a1;
-      font-size: 28px;
+      font-size: 36px;
+      margin-bottom: 20px;
+      animation: fadeInUp 1.4s ease-out;
+    }
+    h2, h3, p, ul, .schedule, .facilitator {
+      animation: fadeInUp 1.6s ease-out;
     }
     h2 {
       color: #0d47a1;
-      font-size: 22px;
-      margin-top: 30px;
+      font-size: 24px;
+      border-bottom: 2px solid #bbdefb;
+      padding-bottom: 8px;
+      margin-top: 40px;
     }
     h3 {
       font-size: 18px;
-      color: #0d47a1;
+      color: #1565c0;
+      margin-top: 20px;
     }
     p, li {
-      line-height: 1.6;
+      line-height: 1.8;
+      font-size: 17px;
     }
     ul {
       padding-right: 20px;
     }
     .schedule {
-      background-color: #e3f2fd;
-      padding: 10px 20px;
+      background-color: #f1f8ff;
+      padding: 18px 25px;
       margin-top: 10px;
-      border-radius: 5px;
+      border-radius: 10px;
+      border: 1px solid #bbdefb;
     }
     .facilitator {
       display: flex;
       align-items: center;
-      margin-top: 20px;
+      margin-top: 30px;
       gap: 20px;
+      background-color: #f0f4f8;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #cfd8dc;
     }
     .facilitator img {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 50%;
-      border: 2px solid #0d47a1;
+      border: 3px solid #0d47a1;
+      animation: fadeInUp 1.8s ease-out;
+    }
+    .contact-button {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      background-color: #0d47a1;
+      color: #fff;
+      padding: 14px 22px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 1000;
+      text-decoration: none;
+      animation: fadeInUp 2s ease-out;
+    }
+    .contact-button:hover {
+      background-color: #1565c0;
+      transform: translateY(-2px);
     }
   </style>
 </head>
@@ -144,5 +192,7 @@
       </p>
     </div>
   </div>
+
+  <a class="contact-button" href="mailto:shahar.cohen@improve-it.co.il">✉ צור קשר</a>
 </body>
 </html>
